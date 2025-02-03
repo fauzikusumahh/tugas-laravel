@@ -17,7 +17,7 @@
         <ol>
             <li>Mengunjungi Website ini</li>
             <li>
-                <a href="form">Form Sign Up</a>
+                <a href="formm">Form Sign Up</a>
             </li>
             <li>Selesai</li>
         </ol>

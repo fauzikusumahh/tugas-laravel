@@ -1,75 +1,61 @@
-@extends('template.master')
-@section('judul', 'Form')
-@section('conten')
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buat Account Baru</title>
+  </head>
+  <body>
+    <h2>Buat Account Baru</h2>
 
-          <!-- left column -->
-<div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body">
-                  <div class="form-group">
-                  <label for="namaGenre">Nama Genre</label>
-                  <input type="text" class="form-control" id="namaGenre" name="nama" placeholder="Masukkan Nama Genre">
-                  </div>
-                </div>
-                <!-- /.card-body -->
+    <form action="welcome">
+      <h3>Sign Up Form</h3>
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-              </form>
-            </div>
+      <label for="firstname">First name :</label>
+      <br />
+      <input type="text" id="firstname" name="firstname" />
+      <br /><br />
 
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Form Film</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="judul">Judul Film</label>
-                    <input type="text" class="form-control" id="judul" placeholder="Masukan Judul">
-                  </div>
-                  <div class="form-group">
-                    <label for="ringkasan">Ringkasan</label>
-                    <input type="text" class="form-control" id="ringkasan" placeholder="Masukin Ringkasan">
-                  </div>
-                  <div class="form-group">
-                    <label for="tahun">Tahun</label>
-                    <input type="number" class="form-control" id="tahun" placeholder="Masukin Tahun">
-                  </div>
-                  <div class="form-group">
-                    <label for="poster">Poster</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="poster">
-                        <label class="custom-file-label" for="poster">Pilih File</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Unggah</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                </div>
-                <!-- /.card-body -->
+      <label for="lastname">Last name :</label>
+      <br />
+      <input type="text" id="lastname" name="lastname" />
+      <br /><br />
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-              </form>
-            </div>
-</div>
-            <!-- /.card -->
-@endsection
+      <label>Gender</label>
+      <br />
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label>
+      <br />
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label>
+      <br /><br />
+
+      <label for="nationality">Nationality</label>
+      <br />
+      <select id="nationality" name="nationality">
+        <option value="indonesia">Indonesia</option>
+        <option value="malaysia">malaysia</option>
+        <option value="amerika">amerika</option>
+        <option value="other">other</option>
+      </select>
+      <br /><br />
+
+      <label>Language Spoken</label>
+      <br />
+      <input type="checkbox" id="bahasa" name="language" value="bahasa" />
+      <label for="bahasa">Bahasa Indonesia</label>
+      <br />
+      <input type="checkbox" id="english" name="language" value="english" />
+      <label for="english">English</label>
+      <br />
+      <input type="checkbox" id="other" name="language" value="other" />
+      <label for="other">Other</label>
+      <br /><br />
+
+      <label for="bio">Bio</label>
+      <br />
+      <textarea id="bio" name="bio" rows="5" cols="40"></textarea>
+      <br /><br />
+
+      <input type="submit" value="Sign Up" />
+    </form>
+  </body>
+</html>

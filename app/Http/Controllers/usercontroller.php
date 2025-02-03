@@ -8,18 +8,17 @@ class usercontroller extends Controller
     {                                     
     return view ('index');
     }
-    public function form()
+    public function formm()
     { 
-        return view ('form');
+        return view ('formm');
     }
     public function welcome()
     {
         return view('welcome');
     }
-
-    public function master()
+    public function main()
     {
-        return view('template\master');
+        return view('template\main');
     }
 
 }

@@ -9,17 +9,22 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('kritiks', function (Blueprint $table) {
             $table->id();
-            $table->foreignID('pengguna_id')->constrained();
-            $table->foreignID('film_id')->constrained();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('film_id');
             $table->text('content');
-            $table->integer('point');
+            $table->integer('poin');
+            
+            // Relasi
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('film_id')->references('id')->on('films')->onDelete('cascade');
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

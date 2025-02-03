@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('perans', function (Blueprint $table) {
             $table->id();
+            $table->foreignID('film_id')->constrained();
+            $table->foreignID('cast_id')->constrained();
+            $table->string('nama', 45);
             $table->timestamps();
         });
     }
