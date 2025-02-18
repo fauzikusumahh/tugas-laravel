@@ -2,63 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genre;
+use App\Models\Genres;
 use Illuminate\Http\Request;
-use Psy\Codecleaner\ReturnTrypass;
-use Illuminate\Support\Facades\DB;
+use Psy\CodeCleaner\ReturnTypePass;
 
-
-class genrescontroller extends Controller
+class GenresController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function tampil()
     {
-        //
-        $genre = genre::get();
-        return view('genre.tampil',compact('genre'));
+        $genres = Genres::get();
+        return view('genre.tampil', compact('genres'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function tambah()
     {
-        //
         return view('genre.tambah');
     }
 
     public function submit(Request $request)
     {
-        $genre = New Genre();
-        $genre->nama = $request->nama;
-        $genre->save();
+        $genres = New Genres();
+        $genres->name = $request->name;
+        $genres->save();
 
         return redirect()->route('genre.tampil');
     }
 
     public function edit($id)
     {
-        $genre = Genre::find($id);
-        return view('genre.edit', compact('genre'));
+        $genres = Genres::find($id);
+        return view('genre.edit', compact('genres'));
     }
 
     public function update(Request $request, $id)
     {
-        $genre = Genre::find($id);
-        $genre->nama = $request->nama;
-        $genre->update();
+        $genres = Genres::find($id);
+        $genres->name = $request->name;
+        $genres->update();
 
         return redirect()->route('genre.tampil');
 
     }
 
-
     public function delete($id)
     {
-        $genre =genre::find($id);
-        $genre->delete();
+        $genres = Genres::find($id);
+        $genres->delete();
+
         return redirect()->route('genre.tampil');
+
     }
 }
